@@ -1,3 +1,7 @@
+# React Calculator
+
+This is a simple calculator built with React JS. The calculator supports basic arithmetic operations such as addition, subtraction, multiplication, and division.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
