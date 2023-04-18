@@ -3,24 +3,24 @@ import React, { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [calculation, setCalculation] = useState('');
-  const [result, setResult] = useState('');
-  const [prevResult, setPrevResult] = useState('');
+  const [calculation, setCalculation] = useState(''); // state to store the current calculation
+  const [result, setResult] = useState('');// state to store the result of the current calculation
+  const [prevResult, setPrevResult] = useState('');// state to store the previous calculation result
 
   const handleButtonClick = (buttonValue) => {
     if (buttonValue === 'Clear') {
-      setCalculation('');
-      setResult('');
+      setCalculation('');// clear the current calculation
+      setResult('');// clear the current result
     } else if (buttonValue === 'Delete') {
-      setCalculation(calculation.slice(0, -1));
+      setCalculation(calculation.slice(0, -1));//remove the last character
     } else if (buttonValue === '=') {
-      const newCalculation = calculation + '=' + eval(calculation);
+      const newCalculation = calculation + '=' + eval(calculation);//add result
       setPrevResult(newCalculation);
       setResult(eval(calculation));
       setCalculation(newCalculation);
     } else {
       if (calculation === '0' && /\d/.test(buttonValue)) {
-        setCalculation(buttonValue);
+        setCalculation(buttonValue);//replace the 0 with  button value
       } else if (calculation === '' && buttonValue === '0') {
         setCalculation('');
       } else {
